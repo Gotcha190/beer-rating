@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "beer-rating-plugin/beer-rating",
+  "version": "0.1.0",
+  "title": "Beer Rating",
+  "category": "widgets",
+  "icon": "beer",
+  "description": "Rate a post by giving it a beer",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "beer-rating",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "beerCount": {
+      "type": "number",
+      "default": 0
+    }
+  }
+}
