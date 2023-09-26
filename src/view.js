@@ -19,12 +19,12 @@
 /* eslint-disable no-console */
 console.log( 'Hello World! (from beer-rating-beer-rating block)' );
 /* eslint-enable no-console */
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('.wp-block-beer-rating-plugin-beer-rating input[type="button"]');
-    let beerCount = parseInt(button.value);
+// document.addEventListener('DOMContentLoaded', function () {
+//     const button = document.querySelector('.wp-block-beer-rating-plugin-beer-rating input[type="button"]');
+//     let beerCount = parseInt(button.value);
   
-    button.addEventListener('click', function () {
-      beerCount++;
-      button.value = beerCount;
-    });
-  });
+//     button.addEventListener('click', function () {
+//       beerCount++;
+//       button.value = beerCount;
+//     });
+//   });

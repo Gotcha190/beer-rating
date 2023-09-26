@@ -5,6 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -22,17 +23,21 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes } ) {
-	const { beerCount } = attributes;
+export default function Edit() {
+	const blockProps = useBlockProps();
+	const posts = useSelect((select) => {
+		return select('core').getEntityRecords('postType', 'post');
+	}, []);
 
-	const handleOnClick = () =>{
-		setAttributes({
-			beerCount: beerCount +1
-		})
-	};
 	return (
-		<div {...useBlockProps()}>
-			<input type='button' value={attributes.beerCount} onClick={handleOnClick}/>
+		<div {...blockProps}>
+			{!posts && 'Loading'}
+			{posts && posts.length === 0 && 'No Posts'}
+			{posts && posts.length > 0 && (
+				<a href={posts[0].link}>
+					{posts[0].title.rendered}
+				</a>
+			)}
 		</div>
 	);
 }
