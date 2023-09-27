@@ -1,1 +1,1 @@
-console.log("Hello World! (from beer-rating-beer-rating block)"),document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelector('.wp-block-beer-rating-plugin-beer-rating input[type="button"]');let n=parseInt(e.value);e.addEventListener("click",(function(){n++,e.value=n}))}));
+console.log("Hello World! (from beer-rating-beer-rating block)");
